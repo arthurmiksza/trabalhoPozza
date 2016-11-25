@@ -1,7 +1,9 @@
 package classes;
 
+import java.io.Serializable;
 
-public class Posicao {
+
+public class Posicao implements Serializable {
     public float X;
     public float Y;
     

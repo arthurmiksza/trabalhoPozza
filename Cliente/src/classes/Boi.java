@@ -1,7 +1,9 @@
 package classes;
 
+import java.io.Serializable;
 
-public class Boi {
+
+public class Boi implements Serializable{
     public int ID;
     public boolean fora;
     public Posicao pos;
