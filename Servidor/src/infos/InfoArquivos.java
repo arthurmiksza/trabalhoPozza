@@ -1,7 +1,4 @@
 package infos;
-import classes.Boi;
-import java.util.ArrayList;
-
 import java.io.File;
 public class InfoArquivos {
     public final String pathArquivos = new File(System.getProperty("user.dir")).getParent() + "/SinalgoWsn/src/data";
