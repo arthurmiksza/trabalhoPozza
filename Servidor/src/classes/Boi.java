@@ -35,5 +35,22 @@ public class Boi {
         this.pos = pos;
     }
     
+    public Boi acharPeloId(Boi[] b, int id) {
+        for(Boi boi : b) {
+            if (boi.getID() == id)
+                return boi;
+        }
+        return null;
+    }    
     
+    public boolean JaTemEsseBoi(Boi[] bois, Boi esse) {
+        for (Boi b : bois)
+            if (b.getID() == esse.getID())
+                return true;
+        return false;
+    }
+    
+    public String toString() {
+        return "ID: " + this.ID + "; FORA? " + (this.isFora()? "TRUE" : "FALSE") + " POS: " + this.getPos().toString();
+    }
 }

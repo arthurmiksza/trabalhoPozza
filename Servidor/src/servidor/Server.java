@@ -6,15 +6,16 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import classes.Boi;
+import classes.*;
 import infos.InfoArquivos;
 import java.io.File;
+import java.util.ArrayList;
 
 public class Server implements Runnable {
     public DataInputStream input;
     public ServerSocket svSocket;
     public int porta = 9000;
-    public Boi[] bois;
+    public ArrayList<Boi> bois;
     public BufferedReader br;
     
     @Override
@@ -22,15 +23,18 @@ public class Server implements Runnable {
         try {
             InfoArquivos info = new InfoArquivos();
             if (info.checkRequeriments()) {
-                 File[] fs = new File[info.qtd()];
-                bois = new Boi[info.qtd()];
+                File[] fs = new File[info.qtd()];
+                bois = BoiAux.bois;
                 fs = new File(info.caminhoArquivos()).listFiles();
                 for(File f : fs) {
                     br = new BufferedReader(new FileReader(f));
                     String texto = br.readLine();
                     if (texto != null) {
-                        System.out.println(texto);
+                        String[] resposta = info.trataResposta(texto);
+                        bois.add(new Boi(Integer.parseInt(resposta[0]), resposta[1] == "TRUE", new Posicao(Float.parseFloat(resposta[2]), Float.parseFloat(resposta[3]))));
                     }
+                    for(Boi b : bois)
+                        System.out.println(b.toString());
                 }
                 svSocket = new ServerSocket(porta);
                 while(true) {

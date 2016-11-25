@@ -38,7 +38,7 @@ public class Conectador extends ConnectivityModelHelper {
             File f = new File(this.filePath + "dados" + from.ID + ".txt");
             if (f.exists()) {
                 PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f, false)));
-                pw.println("ID&" + from.ID + ";OUT&" + ((distance < raio)? "FALSE": "TRUE") + ";POS&X-" + from.getPosition().xCoord + "|Y-" + from.getPosition().yCoord);
+                pw.println("ID&" + from.ID + ";OUT&" + ((distance < raio)? "FALSE": "TRUE") + ";POS&X-" + from.getPosition().xCoord + "separaY-" + from.getPosition().yCoord);
                 pw.close();
             }
         } catch (IOException err) {

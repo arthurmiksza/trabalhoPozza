@@ -25,5 +25,8 @@ public class Posicao {
         this.Y = Y;
     }
     
+    public String toString() {
+        return "X: " + this.getX() + "; Y: " + this.getY();
+    }
     
 }

@@ -3,7 +3,8 @@ package servidor;
 import java.rmi.Remote;
 import classes.Boi;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 public interface Remoto extends Remote {
-    public Boi[] getBoi() throws RemoteException;   
+    public ArrayList<Boi> getBois() throws RemoteException;   
 }

@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servidor;
+import classes.*;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
 
-/**
- *
- * @author Aluno
- */
-public class ServerRMI {
+public class ServerRMI implements Remoto {
+    public ArrayList<Boi> bois = BoiAux.bois;
+    @Override
+    public ArrayList<Boi> getBois() throws RemoteException {
+        return this.bois;
+    }
     
 }
