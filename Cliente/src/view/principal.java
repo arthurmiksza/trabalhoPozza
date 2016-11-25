@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
-
-/**
- *
- * @author Arthur
- */
+import cliente.ClientRMI;
+import java.rmi.RemoteException;
+import classes.Boi;
+import java.util.ArrayList;
 public class principal extends javax.swing.JPanel {
 
-    /**
-     * Creates new form principal
-     */
-    public principal() {
+    public ArrayList<Boi> bois;
+    
+    public principal() throws RemoteException {
         initComponents();
+        bois = ClientRMI.getServer().getBois();
+        for(Boi b: bois)
+            System.out.println(b.toString());
     }
 
     /**

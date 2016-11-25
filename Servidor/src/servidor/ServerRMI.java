@@ -18,7 +18,7 @@ public class ServerRMI implements Remoto {
         try {
             Remoto remote = (Remoto) UnicastRemoteObject.exportObject(new ServerRMI(), 0);
             Registry reg = LocateRegistry.createRegistry(porta);
-            reg.bind("remote", remote);
+            reg.bind("remoto", remote);
         } catch (Exception e) {
             System.err.println("Erro no RMI: " + e.getMessage());
         }
