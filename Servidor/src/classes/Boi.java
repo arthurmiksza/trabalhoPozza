@@ -1,9 +1,14 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class Boi {
     public int ID;
     public boolean fora;
     public Posicao pos;
+    
+    public Boi() {
+    }
     
     public Boi(int i, boolean f, Posicao p) {
         this.ID = i;
@@ -35,7 +40,7 @@ public class Boi {
         this.pos = pos;
     }
     
-    public Boi acharPeloId(Boi[] b, int id) {
+    public Boi acharPeloId(ArrayList<Boi> b, int id) {
         for(Boi boi : b) {
             if (boi.getID() == id)
                 return boi;
@@ -43,7 +48,7 @@ public class Boi {
         return null;
     }    
     
-    public boolean JaTemEsseBoi(Boi[] bois, Boi esse) {
+    public boolean JaTemEsseBoi(ArrayList<Boi>bois, Boi esse) {
         for (Boi b : bois)
             if (b.getID() == esse.getID())
                 return true;

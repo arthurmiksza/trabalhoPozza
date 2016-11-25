@@ -17,12 +17,14 @@ public class Server implements Runnable {
     public int porta = 9000;
     public ArrayList<Boi> bois;
     public BufferedReader br;
+    public Boi boiAux;
     
     @Override
     public void run() {
         try {
             InfoArquivos info = new InfoArquivos();
             if (info.checkRequeriments()) {
+                boiAux = new Boi();
                 File[] fs = new File[info.qtd()];
                 bois = BoiAux.bois;
                 fs = new File(info.caminhoArquivos()).listFiles();
@@ -31,10 +33,9 @@ public class Server implements Runnable {
                     String texto = br.readLine();
                     if (texto != null) {
                         String[] resposta = info.trataResposta(texto);
-                        bois.add(new Boi(Integer.parseInt(resposta[0]), resposta[1] == "TRUE", new Posicao(Float.parseFloat(resposta[2]), Float.parseFloat(resposta[3]))));
+                        bois.add(new Boi(Integer.parseInt(resposta[0]), resposta[1].equals("TRUE"), new Posicao(Float.parseFloat(resposta[2]), Float.parseFloat(resposta[3]))));
                     }
-                    for(Boi b : bois)
-                        System.out.println(b.toString());
+                    Boi teste = boiAux.acharPeloId(bois, 21);
                 }
                 svSocket = new ServerSocket(porta);
                 while(true) {
@@ -42,6 +43,9 @@ public class Server implements Runnable {
                     input = new DataInputStream(cli.getInputStream());
                     String request = input.readUTF();
                 }
+            }
+            else {
+                System.out.println("Erro nos requisitos para ligar o servidor!");
             }
            
         } catch (IOException er) {
