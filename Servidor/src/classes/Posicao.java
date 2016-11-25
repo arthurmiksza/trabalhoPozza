@@ -1,10 +1,10 @@
 package classes;
 
-public class posicao {
+public class Posicao {
     public float X;
     public float Y;
     
-    public posicao(float x, float y) {
+    public Posicao(float x, float y) {
         this.X = x;
         this.Y = y;
     }

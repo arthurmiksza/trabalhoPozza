@@ -1,11 +1,11 @@
 package classes;
 
-public class boi {
+public class Boi {
     public int ID;
     public boolean fora;
-    public posicao pos;
+    public Posicao pos;
     
-    public boi(int i, boolean f, posicao p) {
+    public Boi(int i, boolean f, Posicao p) {
         this.ID = i;
         this.fora = f;
         this.pos = p;
@@ -19,7 +19,7 @@ public class boi {
         return fora;
     }
 
-    public posicao getPos() {
+    public Posicao getPos() {
         return pos;
     }
 
@@ -31,7 +31,7 @@ public class boi {
         this.fora = fora;
     }
 
-    public void setPos(posicao pos) {
+    public void setPos(Posicao pos) {
         this.pos = pos;
     }
     

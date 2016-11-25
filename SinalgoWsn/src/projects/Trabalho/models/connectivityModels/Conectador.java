@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import projects.Trabalho.models.mobilityModels.AlertOut;
 import projects.Trabalho.nodes.nodeImplementations.S2Node;
 import projects.Trabalho.nodes.nodeImplementations.Sink;
 import sinalgo.configuration.Configuration;
@@ -18,8 +17,6 @@ import sinalgo.configuration.CorruptConfigurationEntryException;
 import sinalgo.models.ConnectivityModelHelper;
 import sinalgo.nodes.Node;
 import sinalgo.nodes.Position;
-import sinalgo.runtime.Global;
-import sinalgo.runtime.Main;
 /**
  *
  * @author Arthur
