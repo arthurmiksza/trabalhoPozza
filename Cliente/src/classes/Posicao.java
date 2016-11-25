@@ -1,5 +1,6 @@
 package classes;
 
+
 public class Posicao {
     public float X;
     public float Y;

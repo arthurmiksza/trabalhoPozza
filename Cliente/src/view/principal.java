@@ -1,5 +1,5 @@
 package view;
-import cliente.ClientRMI;
+import servidor.ServerRMI;
 import java.rmi.RemoteException;
 import classes.Boi;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public class principal extends javax.swing.JPanel {
     
     public principal() throws RemoteException {
         initComponents();
-        bois = ClientRMI.getServer().getBois();
+        bois = ServerRMI.getServer().getBois();
         for(Boi b: bois)
             System.out.println(b.toString());
     }

@@ -6,5 +6,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public interface Remoto extends Remote {
-    public ArrayList<Boi> getBois() throws RemoteException;   
+    public ArrayList<Boi> getBois() throws RemoteException;
+    public String teste() throws RemoteException;
+
 }

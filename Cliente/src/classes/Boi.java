@@ -1,6 +1,5 @@
 package classes;
 
-import java.util.ArrayList;
 
 public class Boi {
     public int ID;
@@ -38,18 +37,6 @@ public class Boi {
 
     public void setPos(Posicao pos) {
         this.pos = pos;
-    }
-    
-    public Boi acharPeloId(ArrayList<Boi> b, int id) {
-        for(Boi boi : b) {
-            if (boi.getID() == id)
-                return boi;
-        }
-        return null;
-    }    
-    
-    public boolean JaTemEsseBoi(ArrayList<Boi>bois, Boi esse) {
-        return bois.stream().anyMatch((b) -> (b.getID() == esse.getID()));
     }
     
     @Override
