@@ -15,10 +15,14 @@ public class InfoArquivos {
     }
     
     public int qtd() {
-        return new File(this.pathArquivos).listFiles().length;
+        return new File(this.caminhoArquivos()).listFiles().length;
     }
     
     public File[] listaArquivos() {
-        return new File(this.pathArquivos).listFiles();
+        return new File(this.caminhoArquivos()).listFiles();
+    }
+    
+    public boolean checkRequeriments() {
+        return this.qtd() > 0 && (new File(this.caminhoArquivos()).exists());
     }
 }

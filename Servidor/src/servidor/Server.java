@@ -11,28 +11,35 @@ import infos.InfoArquivos;
 import java.io.File;
 
 public class Server implements Runnable {
-    DataInputStream input;
+    public DataInputStream input;
     public ServerSocket svSocket;
     public int porta = 9000;
     public Boi[] bois;
+    public BufferedReader br;
     
     @Override
     public void run() {
         try {
             InfoArquivos info = new InfoArquivos();
-            File[] fs = new File[info.qtd()];
-            fs = new File(info.caminhoArquivos()).listFiles();
-            System.out.println("Listando arquivos...");
-            for(File f : fs) {
-                System.out.println(f.getName());
+            if (info.checkRequeriments()) {
+                 File[] fs = new File[info.qtd()];
+                bois = new Boi[info.qtd()];
+                fs = new File(info.caminhoArquivos()).listFiles();
+                for(File f : fs) {
+                    br = new BufferedReader(new FileReader(f));
+                    String texto = br.readLine();
+                    if (texto != null) {
+                        System.out.println(texto);
+                    }
+                }
+                svSocket = new ServerSocket(porta);
+                while(true) {
+                    Socket cli = svSocket.accept();
+                    input = new DataInputStream(cli.getInputStream());
+                    String request = input.readUTF();
+                }
             }
-            svSocket = new ServerSocket(porta);
-            while(true) {
-                Socket cli = svSocket.accept();
-                input = new DataInputStream(cli.getInputStream());
-                String request = input.readUTF();
-                
-            }
+           
         } catch (IOException er) {
             System.out.println("Erro: " + er);
         }
