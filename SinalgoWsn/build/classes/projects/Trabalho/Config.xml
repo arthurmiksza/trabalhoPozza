@@ -8,10 +8,10 @@
 		<dimensions value="2" />
 
 		<!--Length of the deployment field along the x-axis.-->
-		<dimX value="1000" />
+		<dimX value="800" />
 
 		<!--Length of the deployment field along the y-axis.-->
-		<dimY value="1000" />
+		<dimY value="800" />
 
 		<!--Length of the deployment field along the z-axis.-->
 		<dimZ value="500" />
@@ -229,18 +229,18 @@
 
 <MessageTransmission ConstantTime="1"/>
 
-<GeometricNodeCollection rMax="300"/>
-<Conectador rMax="300"/>
+<GeometricNodeCollection rMax="200"/>
+<Conectador rMax="200"/>
 
 <RandomWayPoint>
-	<Speed distribution="Gaussian" mean="2" variance="2" />
+	<Speed distribution="Gaussian" mean="1" variance="2" />
 	<WaitingTime distribution="Poisson" lambda="500" />
 </RandomWayPoint>
 
 <RandomDirection>
 	<NodeSpeed distribution="Gaussian" mean="2" variance="5" />
-	<WaitingTime distribution="Poisson" lambda="500" />
+	<WaitingTime distribution="Poisson" lambda="200" />
 	<MoveTime distribution="Uniform" min="2" max="5" />
-</RandomDirection>																																						</Custom>
+</RandomDirection>																																													</Custom>
 </Document>
 

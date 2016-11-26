@@ -13,12 +13,10 @@ import java.util.ArrayList;
 public class ServerRMI implements Remoto {
     public ArrayList<Boi> bois = new ArrayList<>();
     public int porta = 3000;
-     
-    @Override
-    public String teste() throws RemoteException {return "teste";}
    
     @Override
     public ArrayList<Boi> getBois() throws RemoteException {
+        bois.clear();
          InfoArquivos info = new InfoArquivos();
             if (info.checkRequeriments()) {
                 File[] fs;
