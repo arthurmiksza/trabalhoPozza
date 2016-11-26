@@ -36,14 +36,11 @@
 */
 package projects.Trabalho;
 
-import java.io.BufferedWriter;
 import java.lang.reflect.Method;
 
 import javax.swing.JOptionPane;
 
 import java.io.File;
-import projects.Trabalho.nodes.nodeImplementations.S2Node;
-import sinalgo.nodes.Node;
 import sinalgo.runtime.AbstractCustomGlobal;
 import sinalgo.tools.Tools;
 

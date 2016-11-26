@@ -39,25 +39,19 @@ package projects.Trabalho.nodes.nodeImplementations;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.TreeSet;
-import projects.Trabalho.models.mobilityModels.AlertOut;
 
 import sinalgo.configuration.WrongConfigurationException;
-import sinalgo.gui.dialogs.GenerateNodesDialog;
 import sinalgo.gui.transformation.PositionTransformation;
 import sinalgo.io.eps.EPSOutputPrintStream;
 import sinalgo.nodes.Node;
-import sinalgo.nodes.edges.Edge;
 import sinalgo.nodes.messages.Inbox;
-import sinalgo.runtime.Runtime;
 import sinalgo.tools.Tools;
 
 
