@@ -93,11 +93,11 @@ public class index extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("Vermelho: Fora");
+        jLabel2.setText("Vermelho: Fora da área de alcance");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel3.setText("Verde: Dentro");
+        jLabel3.setText("Verde: Dentro da área de alcance");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
