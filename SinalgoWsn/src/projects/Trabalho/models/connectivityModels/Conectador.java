@@ -27,16 +27,21 @@ public class Conectador extends ConnectivityModelHelper {
 
     
     protected boolean isConnected(Node from, Node to){
+        //ARRUMAR ESTE IF
         if (from instanceof S2Node && to instanceof S2Node)
             return false;
         if (from instanceof Sink)
             return false;
+        //calcula a distancia entre os nós
         Position p1 = from.getPosition();
         Position p2 = to.getPosition();	
         double distance = p1.squareDistanceTo(p2);
+        
         try {
             File f = new File(this.filePath + "dados" + from.ID + ".txt");
+            //Se o arquivo do nó existe
             if (f.exists()) {
+                //Escreve no arquivo dele o id, se está fora e a posição X E Y
                 PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f, false)));
                 pw.println("ID&" + from.ID + ";OUT&" + ((distance < raio)? "FALSE": "TRUE") + ";POS&X-" + from.getPosition().xCoord + "separaY-" + from.getPosition().yCoord);
                 pw.close();

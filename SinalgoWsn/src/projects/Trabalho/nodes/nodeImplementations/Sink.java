@@ -32,6 +32,7 @@ public class Sink extends Node {
 
 	@Override
 	public void init() {
+            //pinta o sink de rosa
             this.setColor(Color.PINK);
            
 	}

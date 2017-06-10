@@ -26,10 +26,11 @@ public class index extends javax.swing.JFrame {
     public index() {
         initComponents();
         t.scheduleAtFixedRate(new TimerTask() {
+            //da repaint na tela a cada 0.02 segundos
             public void run() { 
                 painelGado.repaint();
             }
-        }, 100, 300);
+        },400, 2);
     }
 
     public class pastoGado extends javax.swing.JPanel {
@@ -40,6 +41,7 @@ public class index extends javax.swing.JFrame {
                 Graphics2D g2 = (Graphics2D) g;
                 super.paintComponent(g);
                 for(Boi boi: ServerRMI.getServer().getBois()) {
+                    //pinta boi
                     g2.setStroke(new BasicStroke(5));
                     g2.setColor(boi.isFora()? Color.RED : Color.GREEN);
                     g2.drawOval((int) boi.getPos().getX(), (int) boi.getPos().getY(), 4, 4);

@@ -99,6 +99,7 @@ public class CustomGlobal extends AbstractCustomGlobal{
 	 */
 	public void preRun() {
             File f = new File(filePath);
+            //deleta os arquivos da pasta src/data/ se existir
             for(File file: f.listFiles()) 
                 if (f.exists())
                     if (!file.isDirectory()) 

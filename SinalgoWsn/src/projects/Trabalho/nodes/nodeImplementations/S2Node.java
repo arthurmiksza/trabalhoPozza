@@ -89,15 +89,17 @@ public class S2Node extends Node implements Comparable<S2Node> {
 	public void init() {
             File f = new File(this.filePath + "dados" + this.ID + ".txt");  
             try {
+                //cria um arquivo ao adicionar o nó na tela
                 if (!f.exists()) {
+                    //se não existe cria um novo
                     f.createNewFile();
                     System.out.println("ARQUIVO CRIADO EM: " + f.getAbsolutePath());
                 } else {
+                    //se existe um arquivo, limpa o conteudo dele
                     PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f, false)));
                     pw.print("");
                     pw.close();
                 }
-            
             } catch(IOException err) {
                 System.out.println("Erro ao criar arquivo.");
             }
